@@ -3,6 +3,7 @@ package com.menuristorante.project.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.menuristorante.project.model.AccountAdmin;
 import com.menuristorante.project.service.AccountAdminService;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/account_admin")
 public class AccountAdminCtr {
@@ -21,11 +23,6 @@ public class AccountAdminCtr {
 	private  AccountAdminService accountAdminService;
 	
 	
-	
-	
-/*	public AccountAdminCtr(AccountAdminService aAs) {
-		this.aAs = aAs;
-	}*/
 	
 	@PostMapping("/register_new_account")
 	public ResponseEntity<String> save(@RequestBody AccountAdmin ac) {
